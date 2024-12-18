@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Panel</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>User Panel</h1>
+    </div>
+    <form id="user-form">
+      <div class="form-group">
+        <label for="user-name">Nama</label>
+        <div class="input-container">
+          <i data-feather="user"></i>
+          <input type="text" id="user-name" placeholder="Masukkan nama Anda">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="user-class">Kelas</label>
+        <div class="input-container">
+          <i data-feather="book"></i>
+          <select id="user-class">
+            <option value="">Pilih Kelas</option>
+            <option value="Kelas 10 A">Kelas 10 A</option>
+            <option value="Kelas 10 B">Kelas 10 B</option>
+            <option value="Kelas 10 C">Kelas 10 C</option>
+            <option value="Kelas 10 D">Kelas 10 D</option>
+            <option value="Kelas 10 E">Kelas 10 E</option>
+            <option value="Kelas 10 F">Kelas 10 F</option>
+            <option value="Kelas 10 G">Kelas 10 G</option>
+            <option value="Kelas 11 A">Kelas 11 A</option>
+            <option value="Kelas 11 B">Kelas 11 B</option>
+            <option value="Kelas 11 C">Kelas 11 C</option>
+            <option value="Kelas 11 D">Kelas 11 D</option>
+            <option value="Kelas 11 E">Kelas 11 E</option>
+            <option value="Kelas 11 F">Kelas 11 F</option>
+            <option value="Kelas 11 G">Kelas 11 G</option>
+            <option value="Kelas 12 IPA 1">Kelas 12 IPA 1</option>
+            <option value="Kelas 12 IPA 2">Kelas 12 IPA 2</option>
+            <option value="Kelas 12 IPA 3">Kelas 12 IPA 3</option>
+            <option value="Kelas 12 IPA 4">Kelas 12 IPA 4</option>
+            <option value="Kelas 12 IPS 1">Kelas 12 IPS 1</option>
+            <option value="Kelas 12 IPS 2">Kelas 12 IPS 2</option>
+            <option value="Kelas 12 IPS 3">Kelas 12 IPS 3</option>
+            <option value="Kelas 12 IPS 4">Kelas 12 IPS 4</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="user-token">Token</label>
+        <div class="input-container">
+          <i data-feather="key"></i>
+          <input type="text" id="user-token" placeholder="Masukkan token">
+        </div>
+      </div>
+      <button type="button" class="btn" id="submit-token-btn">
+        <i data-feather="check-circle"></i>
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <!-- Custom Dialog -->
+  <div class="dialog-overlay" id="dialog-overlay"></div>
+  <div class="dialog" id="custom-dialog">
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-message"></p>
+    <button class="btn" id="dialog-close-btn">OK</button>
+  </div>
+
+  <!-- External JavaScript -->
+  <script type="module" src="js/scripts.js"></script>
+</body>
+</html>
