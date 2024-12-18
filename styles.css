@@ -1,34 +1,36 @@
-:root {
-  --primary-color: #008080;
-  --primary-light: #4DB6AC;
-  --primary-dark: #006666;
-  --background-color: #E0F2F1;
-  --text-color: #333;
-  --input-bg: #FFFFFF;
-  --input-border: #B2DFDB;
-  --dialog-success-bg: #388E3C;
-  --dialog-error-bg: #FFFFFF;
-  --dialog-warning-bg: #FFFFFF;
-  --dialog-text-color: #333;
-}
-
 body {
   font-family: 'Nunito', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #f8f9fa;
 }
 
-.container {
-  max-width: 400px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+.card {
+  max-width: 450px;
+  margin: auto;
+  border-radius: 10px;
 }
 
-/* Tambahkan sisa aturan CSS sesuai file asli */
+.card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border: none;
+}
+
+.input-group input, .form-select {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #008080;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #006666;
+}
