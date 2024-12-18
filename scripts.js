@@ -17,36 +17,26 @@ const userClassInput = document.getElementById('user-class');
 const userTokenInput = document.getElementById('user-token');
 const submitTokenBtn = document.getElementById('submit-token-btn');
 
-const dialogOverlay = document.getElementById('dialog-overlay');
-const customDialog = document.getElementById('custom-dialog');
-const dialogTitle = document.getElementById('dialog-title');
-const dialogMessage = document.getElementById('dialog-message');
-const dialogCloseBtn = document.getElementById('dialog-close-btn');
+// Dialog Modal Elements
+const dialogTitle = document.getElementById('dialogTitle');
+const dialogMessage = document.getElementById('dialogMessage');
+const dialogModal = new bootstrap.Modal(document.getElementById('dialogModal'));
 
-function showDialog(title, message, type) {
+// Show dialog
+function showDialog(title, message) {
   dialogTitle.textContent = title;
   dialogMessage.textContent = message;
-  dialogOverlay.style.display = 'block';
-  customDialog.style.display = 'block';
-
-  customDialog.classList.remove('success', 'error', 'warning');
-  customDialog.classList.add(type);
+  dialogModal.show();
 }
 
-function hideDialog() {
-  dialogOverlay.style.display = 'none';
-  customDialog.style.display = 'none';
-}
-
-dialogCloseBtn.addEventListener('click', hideDialog);
-
+// Submit token logic
 submitTokenBtn.addEventListener('click', async () => {
   const userName = userNameInput.value.trim();
   const userClass = userClassInput.value.trim();
   const userToken = userTokenInput.value.trim();
 
   if (!userName || !userClass || !userToken) {
-    showDialog('Field Kosong', 'Harap isi semua field!', 'warning');
+    showDialog('Field Kosong', 'Harap isi semua field!');
     return;
   }
 
@@ -62,12 +52,12 @@ submitTokenBtn.addEventListener('click', async () => {
     const newToken = generateToken();
     await update(ref(db, 'codes'), { current_code: newToken });
 
-    showDialog('Absen Berhasil', 'Token berhasil digunakan!', 'success');
+    showDialog('Absen Berhasil', 'Token berhasil digunakan!');
     userNameInput.value = '';
     userClassInput.value = '';
     userTokenInput.value = '';
   } else {
-    showDialog('Token Tidak Valid', 'Harap periksa kembali token Anda.', 'error');
+    showDialog('Token Tidak Valid', 'Harap periksa kembali token Anda.');
   }
 });
 
